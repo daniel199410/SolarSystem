@@ -1,15 +1,17 @@
 let isOpen = false;
 
 const background = document.getElementById('background');
-background.style.height = `${window.innerHeight}px`;
 
 let itemDetail = document.getElementById('item-detail');
 
 let moonsSec = document.getElementById("moons");
 
-window.addEventListener("onresize", function(){
+if(window.innerWidth > 425){
     background.style.height = `${window.innerHeight}px`;
-});
+    window.addEventListener("onresize", function(){
+        background.style.height = `${window.innerHeight}px`;
+    });
+}
 
 var planets = document.querySelectorAll('.item');
 planets.forEach(planet => {
@@ -41,7 +43,7 @@ planets.forEach(planet => {
             })
         }
         console.log(`${itemDetail.offsetHeight}:${background.offsetHeight}`)
-        if(itemDetail.offsetHeight > 350){
+        if(itemDetail.offsetHeight > 350 && window.innerHeight > 420){
             console.log('asdasd');
             background.style.height = `${background.offsetHeight + 100}px`;
         }  
@@ -55,8 +57,8 @@ closeButton.addEventListener('click', (e) => {
     while (moonsSec.firstChild) {
         moonsSec.removeChild(moonsSec.firstChild);
     }
-    background.style.height = `${window.innerHeight}px`;
+    if(window.innerWidth > 425){
+        background.style.height = `${window.innerHeight}px`;
+    }
     itemDetail.classList.add("hidden");
 });
-
-//console.log(planetsData.planets.find((e) => e.name == "Mercurio"));
