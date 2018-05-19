@@ -65,6 +65,7 @@ body{
     border-radius: 5px;
     color: #F5F5F5;
     padding: 0 16px;
+    padding-bottom: 8px;
 }
 
 .item-detail p{
@@ -90,13 +91,14 @@ body{
 }
 
 .moons{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
     border-top: 1px solid #efefef;
 }
 
 .moons img{
     min-width: 100px;
-    width: 10%;
+    width: 100px;
 }
 
 .neptune{

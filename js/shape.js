@@ -7,7 +7,7 @@ let itemDetail = document.getElementById('item-detail');
 
 let moonsSec = document.getElementById("moons");
 
-window.addEventListener("resize", function(){
+window.addEventListener("onresize", function(){
     background.style.height = `${window.innerHeight}px`;
 });
 
@@ -24,6 +24,9 @@ planets.forEach(planet => {
         document.getElementById('gravity').innerHTML = planet.gravity;
         document.getElementById('pediod').innerHTML = planet.pediod;
         document.getElementById('temperature').innerHTML = planet.temperature;
+        while (moonsSec.firstChild) {
+            moonsSec.removeChild(moonsSec.firstChild);
+        }
         if(moonsSec.childElementCount == 0){
             planet.moons.forEach(moon => {
                 let article = document.createElement("article");
@@ -35,16 +38,22 @@ planets.forEach(planet => {
                 article.appendChild(moonName);
                 article.appendChild(img);
                 moonsSec.appendChild(article);
-                console.log(article)
             })
         }
         itemDetail.classList.remove("hidden");
+        if(itemDetail.offsetHeight + 86 > background.offsetHeight){
+            background.style.height = `${background.offsetHeight + 100}px`;
+        }     
     })
 })
 
 const closeButton = document.getElementById("close");
 closeButton.addEventListener('click', (e) => {
     e.preventDefault;
+    while (moonsSec.firstChild) {
+        moonsSec.removeChild(moonsSec.firstChild);
+    }
+    background.style.height = `${window.innerHeight}px`;
     itemDetail.classList.add("hidden");
 });
 
