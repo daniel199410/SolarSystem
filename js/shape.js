@@ -40,10 +40,12 @@ planets.forEach(planet => {
                 moonsSec.appendChild(article);
             })
         }
-        itemDetail.classList.remove("hidden");
-        if(itemDetail.offsetHeight + 86 > background.offsetHeight){
+        console.log(`${itemDetail.offsetHeight}:${background.offsetHeight}`)
+        if(itemDetail.offsetHeight > 350){
+            console.log('asdasd');
             background.style.height = `${background.offsetHeight + 100}px`;
-        }     
+        }  
+        itemDetail.classList.remove("hidden");           
     })
 })
 
