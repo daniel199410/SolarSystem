@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>El Sistema Solar</title>
+    </head>
+    <body>
+        <div class="background" id="background">
+            <p id="planet-name" class="planet-name">El Sistema Solar</p>
+            <img src="Img/sunHalf.png" class="item sun" alt="El sol">
+            <img src="Img/mercury.png" class="item mercury" alt="Mercurio">
+            <img src="Img/venus.png" class="item venus" alt="Venus">
+            <img src="Img/earth.png" class="item earth" alt="Tiera">
+            <img src="Img/mars.png" class="item mars" alt="Marte">
+            <img src="Img/jupiter.png" class="item jupiter" alt="Júpiter">
+            <img src="Img/saturn.png" class="item saturn" alt="Saturno">
+            <img src="Img/uranus.png" class="item uranus" alt="Urano">
+            <img src="Img/neptune.png" class="item neptune" alt="Neptuno">
+            <p class="info">Has click sobre un cuerpo seleste para obtener más infrmación</p>
+        </div>
+        <article id="item-detail" class="item-detail hidden">
+            <a href="#" class="close " id="close">X</a>
+            <p><strong>Distancia media al Sol: </strong><span id="distanceKm"></span> km, <span id="distanceUa"></span>UA</p>
+            <p><strong>Radio medio: </strong><span id="radious"></span> km</p>
+            <p><strong>Gravedad ecuatorial: </strong><span id="gravity"></span> m2</p>
+            <p><strong>Periodo de rotación: </strong><span id="pediod"></span> días</p>
+            <p><strong>Temperatura media: </strong><span id="temperature"></span> °C</p>
+            <h2>Lunas</h2>
+            <section class="moons" id="moons"></section>
+        </article>
+        <script src="js/data.js"></script>
+        <script src="js/shape.js"></script>
+    </body>
+</html>

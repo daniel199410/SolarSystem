@@ -1,0 +1,128 @@
+body{
+    font-family: 'Vollkorn', serif;
+}
+
+.background{
+    background-image: url('../Img/background.jpg');
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.background img{
+    position: absolute;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.background img:hover{
+    transform: scale(1.5, 1.5);
+}
+
+.close{
+    position: absolute;
+    left: 95%;
+    top: 3%;
+    color: white;
+    text-decoration: none;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.earth{
+    width: 3%;
+    top: 46%;
+    left: 34%;
+}
+
+.planet-name{
+    position: absolute;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    z-index: 100;
+}
+
+.info{
+    position: absolute;
+    top: 90%;
+    left: 80%;
+    color: white;
+}
+
+.item-detail{
+    position: absolute;
+    top: 13%;
+    background-color: rgba(0,0,0,0.8);
+    width: 50%;
+    display: block;
+    left: 25%;
+    border-radius: 5px;
+    color: #F5F5F5;
+    padding: 0 16px;
+}
+
+.item-detail p{
+
+}
+
+.jupiter{
+    width: 30%;
+    top: 19%;
+    left: 41%;
+}
+
+.mars{
+    width: 2%;
+    top: 47%;
+    left: 38%;
+}
+
+.mercury{
+    top: 48%;
+    left: 29%;
+    width: 1%;
+}
+
+.moons{
+    display: flex;
+    border-top: 1px solid #efefef;
+}
+
+.moons img{
+    min-width: 100px;
+    width: 10%;
+}
+
+.neptune{
+    top: 39%;
+    width: 9%;
+    left: 80%;
+}
+
+.saturn{
+    width: 26%;
+    top: 9%;
+    left: 57%;
+}
+
+.sun{
+    height: 100%;
+}
+
+.uranus{
+    width: 9%;
+    top: 39%;
+    left: 73%;
+}
+
+.venus{
+    width: 3%;
+    top: 46%;
+    left: 31%;
+}
