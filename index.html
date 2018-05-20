@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Fuentes de Google-->
         <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+        <!-- Quita todos los estilos que pone por defecto el navegador-->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="Images/x-icon" href="Img/solarSystemIcon.jpg">
         <title>El Sistema Solar</title>
     </head>
     <body>
+        <!-- #region En este contenedor se agregan la imágen de cada planeta y del sol -->
         <div class="background" id="background">
             <p id="planet-name" class="planet-name">El Sistema Solar</p>
             <img src="Img/sunWhite.png" class="item sun" alt="El sol">
@@ -21,8 +25,11 @@
             <img src="Img/saturn.png" class="item saturn" alt="Saturno">
             <img src="Img/uranus.png" class="item uranus" alt="Urano">
             <img src="Img/neptune.png" class="item neptune" alt="Neptuno">
-            <p class="info">Has click sobre un cuerpo celeste para obtener más infrmación</p>
+            <p class="info">Has click sobre un cuerpo celeste para obtener más información</p>
         </div>
+        <!-- #endregion -->
+        <!-- #region  Este article cambia dinámicamente su contenido, es donde se presenta la información
+        del planeta seleccionado-->
         <article id="item-detail" class="item-detail hidden">
             <a href="#" class="close " id="close">X</a>
             <p><strong>Distancia media al Sol: </strong><span id="distanceKm"></span> km, <span id="distanceUa"></span>UA</p>
@@ -31,8 +38,18 @@
             <p><strong>Periodo de rotación: </strong><span id="pediod"></span> días</p>
             <p><strong>Temperatura media: </strong><span id="temperature"></span> °C</p>
             <h2>Lunas</h2>
-            <section class="moons" id="moons"></section>
+            <section class="moons" id="moons">
+                <!-- En esta sección se carga dinámicamente las lunas que contiene cada planeta,
+                queda vacío en caso de que este no tenga satélites-->
+            </section>
         </article>
+        <!-- #endregion -->
+        <!-- #region Parte inferior de la página-->
+        <footer class="footer">
+            <p>2018 Sebastián Gonzalez Franco</p>
+            <a href="sitemap.html">Mapa del sitio</a>
+        </footer>
+        <!-- #endregion -->
         <script src="js/data.js"></script>
         <script src="js/shape.js"></script>
     </body>

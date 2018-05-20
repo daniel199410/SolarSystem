@@ -1,7 +1,12 @@
+a{
+    text-decoration: none;
+}
+
 body{
     font-family: 'Vollkorn', serif;
 }
 
+/*Se asigna al fondo de la página la imagen background.jpg*/
 .background{
     background-image: url('../Img/background.jpg');
     width: 100%;
@@ -9,19 +14,14 @@ body{
     position: relative;
 }
 
+/*Se asigna un puntero tipo "mano" a las imágenes de los planetas*/
 .background img{
     position: absolute;
     cursor: pointer;
     transition: transform 1s;
 }
 
-@media screen and (min-width: 426px){
-    .background img:hover{
-        transform: scale(1.5, 1.5);
-    }
-}
-
-
+/*Botón de cerrar*/
 .close{
     position: absolute;
     left: 95%;
@@ -34,22 +34,25 @@ body{
     visibility: hidden;
 }
 
-.earth{
-    width: 3%;
-    top: 46%;
-    left: 34%;
-    animation-name: earth;
-    animation-duration: 120s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes earth {
-    from {transform: rotate(0)}
-    to {transform: rotate(360deg)}
-}
-
-.planet-name{
+.footer{
     position: absolute;
+    top: 88%;
+    left: 82%;
+    text-align: right;
+    color: white;
+}
+
+.footer a{
+    color: white;
+}
+
+.footer a:hover{
+    color: #9E9E9E;
+}
+
+/*Estilos para el <p> que muestra el nombre del planeta seleccionado*/
+.planet-name{
+    position: fixed;
     padding: 8px;
     border-radius: 5px;
     color: white;
@@ -61,11 +64,12 @@ body{
 
 .info{
     position: absolute;
-    top: 90%;
+    top: 0;
     left: 80%;
     color: white;
 }
 
+/*Estilos para el contenedor de la información específica del planeta seleccionado*/
 .item-detail{
     position: absolute;
     top: 13%;
@@ -77,50 +81,11 @@ body{
     color: #F5F5F5;
     padding: 0 16px;
     padding-bottom: 8px;
+    z-index: 100;
 }
 
-.jupiter{
-    width: 30%;
-    top: 19%;
-    left: 41%;
-    animation-name: example;
-    animation-duration: 49s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes example {
-    from {transform: rotate(0)}
-    to {transform: rotate(360deg)}
-}
-
-.mars{
-    width: 2%;
-    top: 47%;
-    left: 38%;
-    animation-name: mars;
-    animation-duration: 120s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes mars {
-    from {transform: rotate(0)}
-    to {transform: rotate(360deg)}
-}
-
-.mercury{
-    top: 48%;
-    left: 29%;
-    width: 1%;
-    animation-name: mercury;
-    animation-duration: 6960s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes mercury {
-    from {transform: rotate(0)}
-    to {transform: rotate(360deg)}
-}
-
+/*Estilos para el contenedor de satélites*/
+/*Se establece un diisplay grid, con 4 elementos por fila*/
 .moons{
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -132,6 +97,45 @@ body{
     width: 100px;
 }
 
+/*POSICIONAMIENTO DE PLANETAS*/
+/*A cada uno se le agrega una animación para que rote, cada uno a diferente velocidad*/
+/*A cada planeta se le asigna un ancho dependiendo de su tamño real*/
+.earth{
+    width: 3%;
+    top: 46%;
+    left: 34%;
+    animation-name: earth;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+}
+
+.jupiter{
+    width: 30%;
+    top: 19%;
+    left: 41%;
+    animation-name: jupiter;
+    animation-duration: 49s;
+    animation-iteration-count: infinite;
+}
+
+.mars{
+    width: 2%;
+    top: 47%;
+    left: 38%;
+    animation-name: mars;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+}
+
+.mercury{
+    top: 48%;
+    left: 29%;
+    width: 1%;
+    animation-name: mercury;
+    animation-duration: 6960s;
+    animation-iteration-count: infinite;
+}
+
 .neptune{
     top: 39%;
     width: 9%;
@@ -139,11 +143,6 @@ body{
     animation-name: neptune;
     animation-duration: 80s;
     animation-iteration-count: infinite;
-}
-
-@keyframes neptune {
-    from {transform: rotate(0deg)}
-    to {transform: rotate(360deg)}
 }
 
 .saturn{
@@ -155,11 +154,6 @@ body{
     animation-iteration-count: infinite;
 }
 
-@keyframes saturn {
-    from {transform: rotate(0)}
-    to {transform: rotate(360deg)}
-}
-
 .sun {
     height: 120%;
     top: -58px;
@@ -167,11 +161,6 @@ body{
     animation-name: sun;
     animation-duration: 3000s;
     animation-iteration-count: infinite;
-}
-
-@keyframes sun {
-    from {transform: rotate(0)}
-    to {transform: rotate(360deg)}
 }
 
 .uranus{
@@ -183,12 +172,6 @@ body{
     animation-iteration-count: infinite;
 }
 
-@keyframes uranus {
-    from {transform: rotate(0deg)}
-    to {transform: rotate(-360deg)}
-}
-
-
 .venus{
     width: 3%;
     top: 46%;
@@ -198,24 +181,70 @@ body{
     animation-iteration-count: infinite;
 }
 
+/*Rote de 0 a 360° en un tiempo específico (1 animación por cada cuerpo celeste)*/
+@keyframes earth {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+}
+
+@keyframes jupiter {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+}
+
+@keyframes mars {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+}
+
+@keyframes mercury {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+}
+
+@keyframes neptune {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+
+@keyframes saturn {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+}
+
+@keyframes sun {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+}
+
+@keyframes uranus {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(-360deg)}
+}
+
 @keyframes venus {
     from {transform: rotate(0deg)}
     to {transform: rotate(-360deg)}
 }
 
+/*Adecuación para pantallas con un ancho menor o igual a 425px*/
 @media screen and (max-width: 425px){
     .background{
         height: 1600px;
     }
 
+    /*Se rotan todas las imágenes con el fin de que el sistema no se vea de izquierda a derecha,
+    sino de arriba hacia abajo*/
     .background img {
         transform: rotate(90deg)
     }
 
-    .earth {
-        width: 22%;
-        top: 430px;
-        left: 38%;
+    .footer {
+        width: 100%;
+        top: 288%;
+        left: 0;
+        text-align: center;
+        color: white;
     }
 
     .info {
@@ -231,6 +260,25 @@ body{
         width: 90%;
         left: 1%;
         position: fixed;
+    }
+
+    /*Se muestran 6 lunas por fila*/
+    .moons{
+        grid-template-columns: repeat(6, auto);
+        border-top: 1px solid #efefef;
+    }
+
+    .moons img{
+        min-width: 50px;
+    }
+
+    /*Se redimensionan las imágenes de los planetas de acuerdo al ancho de la pantalla*/
+    /*Se posicionan de tal forma que cada uno quede en el centro de la pantalla por medio de left*/
+    /*Se posicionan de tal modo que lo planetas queden uno encima de otro por medio de top*/
+    .earth {
+        width: 22%;
+        top: 430px;
+        left: 38%;
     }
 
     .jupiter {
@@ -249,15 +297,6 @@ body{
         top: 290px;
         left: 46%;
         width: 7%;
-    }
-
-    .moons{
-        grid-template-columns: repeat(6, auto);
-        border-top: 1px solid #efefef;
-    }
-
-    .moons img{
-        min-width: 50px;
     }
 
     .neptune {

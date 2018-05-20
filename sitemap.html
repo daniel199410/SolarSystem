@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/sitemap.css">
+        <link rel="icon" type="Images/x-icon" href="Img/solarSystemIcon.jpg">
+        <title>Mapa del sitio</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Mapa del sitio</h1>
+            <article>
+                <p>
+                    En este sitio se propone un resumen con las caraterísticas más importantes de cada planeta
+                    que compone el sistema solar. Para ello, se presenta una interfaz principal donde se muestran
+                    todos los planetas del sistemas, cuando se pone el mouse sobre cada planeta, en la parte superior
+                    de la pantalla se muestra su respectivo nombre.
+                </p>
+                <p>
+                    Si se hace click sobre un planeta, se presentan características de este, tales como su 
+                    distancia al sol, su gravedad, etc... En caso de que el planeta tenga satélites se presentan
+                    los mas importantes con su nombre y una imagen.
+                    Para salir de la información se hace click sobre la "X" dispuesta en la parte superior del
+                    contenedor principal.
+                </p>
+                <p>
+                    Este proyecto solo se compone de dos documentos, una para el mapa del sitio y el otro para el sistema
+                    solar como tal; El contenido oculto en el sistema solar se despliega por medio de eventos del mouse
+                    con JavaScript.
+                </p>
+                <a href="index.html" class="button">Navega hacia el sistema solar</a>
+            </article>
+            <section class="references">
+                <h2>Referencias</h2>
+                <section id="references">
+                    <!-- En esta sección se cargan dinámicamente las referencias que existen en data.js-->
+                </section>
+            </section>
+        </div>
+        <footer class="footer">
+            <p>2018 Sebastián Gonzalez Franco</p>
+        </footer>
+        <script src="js/data.js"></script>
+        <script src="js/references.js"></script>
+    </body>
+</html>
